@@ -1,0 +1,137 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+
+.bloque1 {
+    // background-color: red;
+    height: 100vh;
+    display: flex;
+    // align-items: center;
+    background-color: v.$color1;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    .bloque1Container {
+        // background-color: purple;
+        height: auto;
+        width: v.$width;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem 0;
+        row-gap: 3rem;
+        @include m.phone_360 {
+            row-gap: 5rem;
+        }
+        @include m.desktop_1020 {
+            flex-direction: row;
+            width: 85rem;
+            padding: 5rem 0;
+            column-gap: 4rem;
+        }
+        @include m.desktop_1200 {
+            width: 100rem;   
+            column-gap: 10rem; 
+        }
+        @include m.desktop_1400 {
+            width: 120rem;
+        }
+    }
+}
+
+.bloque1Image {
+    position: absolute;
+    height: 100vh !important;
+    width: auto;
+    right: 0;
+
+
+    @media (max-width: 1024px) { // Incluye tablets y móviles
+        display: none; // Desaparece completamente
+    }
+}
+
+   
+
+
+
+.bloque1Left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 3rem;
+    @include m.phone_360 {
+        row-gap: 12rem;
+    }
+    @include m.desktop_1020 {
+        height: 100%;
+        align-items: flex-start;
+    }
+    @include m.desktop_1200 {
+        row-gap: 23rem;
+    }
+    @include m.desktop_1400 {
+        row-gap: 27rem;    
+    }
+    img {     
+        width: 15rem;
+        @include m.phone_375 {
+            width: 17rem;    
+        }
+        @include m.desktop_1020 {
+            width: 20rem;
+        }
+    }
+    .bloque1LeftTitle {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        @include m.desktop_1020 {
+            row-gap: 2rem;
+        }
+        h3, p {
+            color: black;
+            margin: 0;
+            font-size: 2rem;
+            text-align: center;
+            @include m.phone_375 {
+                font-size: 2.5rem;
+            }
+            @include m.desktop_1020 {
+                font-size: 3.5rem;
+            }
+        }
+        p {
+            font-size: 1.5rem;
+            @include m.phone_375 {
+                font-size: 1.7rem;
+            }
+            @include m.desktop_1020 {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+.bloque1Right {
+    img {
+        width: 20rem;
+        @include m.phone_360 {
+            width: 100%;
+        }
+        @include m.desktop_1020 {
+            width: 35rem;
+            position: relative;
+            z-index: 10;
+        }
+    }
+}
+
+.bloque1Left,
+.bloque1Right {
+    @include m.desktop_1020 {
+        width: 50%;
+    }
+}

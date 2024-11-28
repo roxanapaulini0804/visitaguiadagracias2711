@@ -1,0 +1,46 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.bloque4 {
+    background-color: black;
+    color: white;
+    padding: 2rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+.bloque4Title img.logo {
+    max-width: 100px; 
+    height: auto;
+}
+
+.bloque4Content {
+    margin-top: 1rem;
+}
+
+
+@include m.tablet_768 {
+    .container {
+        flex-direction: row; 
+        justify-content: space-between; /* Espaciado entre logo y texto */
+        text-align: left;
+        padding: 0 2rem; /* Más espacio en desktop */
+    }
+
+    .bloque4Title img.logo {
+        max-width: 150px; /* Aumenta el tamaño del logo en desktop */
+    }
+
+    .bloque4Content {
+        margin-top: 0;
+    }
+}

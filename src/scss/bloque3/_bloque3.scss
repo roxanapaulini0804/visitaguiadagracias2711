@@ -1,0 +1,175 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.bloque3 {
+    padding: 5.3rem 0;
+    // background-color: purple;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include m.desktop_1020 {
+        padding: 6.5rem 0;
+    }
+}
+
+
+.bloque3__item {
+    width: 30rem;
+    //background-color: orange;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    row-gap: 1rem;
+    @include m.desktop_1020 {
+        width: 70rem;
+        // background-color: purple;
+        row-gap: 2rem;
+    }
+    &:nth-child(1) {
+        // background-color: green;
+        position: relative;
+    }
+    h3, h4 {
+        margin: 0;
+        // background-color: red;
+        // width: 25rem;
+        text-align: center;
+        color: black;
+    }
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        @include m.desktop_1020 {
+            font-size: 3rem;
+        }
+        span {
+            font-weight: 800;
+        }
+    }
+    h4 {
+        font-size: 1.6rem;
+        text-decoration: underline;
+        font-weight: 500;
+        cursor: pointer;
+        @include m.desktop_1020 {
+            font-size: 2.5rem;
+        }
+    }
+    button {
+        position: relative;
+        height: 4rem;
+        width: 25rem;
+        background-color: black;
+        border: none;
+        border-radius: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 1rem;
+        @include m.desktop_1020 {
+            width: 40rem;
+            height: 5rem;
+        }
+        img {
+            width: 2.5rem;
+            height: 2.5rem;
+            // background-color: green;
+            @include m.desktop_1020 {
+                width: 3.5rem;
+                height: 3.5rem;
+            }
+        }
+        .bloque3ButtonText {
+            margin: 0;
+            color: white;
+            // padding-left: 2rem;
+            font-size: 1.4rem;
+            // width: 38rem;
+            // padding: 1rem 0;
+            width: auto;
+            @include m.desktop_1020 {
+                font-size: 2.5rem;
+                // padding-left: 7rem;
+                width: auto;
+            }
+      }
+    
+    
+        
+}
+
+}
+    
+    
+.bloque3Separator {
+    height: 6rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    @include m.desktop_1020 {
+        height: 8rem;
+    }
+    .bloque3SeparatorLine {
+        width: 85%;
+        height: 50%;
+        border-bottom: 1.5px solid black;
+        @include m.desktop_1020 {
+            width: 75%;
+        }
+        @include m.desktop_1400 {
+            width: 55%;
+        }
+    }
+}
+
+.bloque3SocialLinks {
+    display: flex;                     /* Muestra los iconos en una fila horizontal */
+    justify-content: center;           /* Centra los iconos horizontalmente */
+    align-items: center;               /* Centra los iconos verticalmente */
+    gap: 1.5rem;                       /* Espacio entre los iconos */
+    margin-top: 2rem;
+    width: 100%;                       /* Asegura que ocupe todo el ancho disponible */
+   
+
+    /* Estilo para pantallas grandes */
+    @media (min-width: 1020px) {
+        gap: 2rem;                     /* Aumenta el espacio entre los iconos en pantallas grandes */
+        width: 80%;                     /* Ocupa el 80% del ancho disponible */
+        min-width: 600px;               /* Asegura que no se colapse demasiado */
+        max-width: 1400px;              /* Permite que se expanda más en pantallas muy grandes */
+    }
+
+    a {
+        display: inline-flex;           /* Asegura que los enlaces sean flexibles */
+        justify-content: center;
+        align-items: center;
+        width: 50px;                    /* Tamaño de los iconos */
+        height: 50px;
+       
+        border-radius: 50%;             /* Iconos circulares */
+        transition: transform 0.3s ease, background-color 0.3s ease;
+
+        img {
+            width: 45px;                /* Tamaño de la imagen dentro del icono */
+            height: 45px;
+            object-fit: contain;        /* Mantiene la relación de aspecto de la imagen */
+        }
+
+        
+    }
+
+    /* Ajustes para pantallas grandes */
+    @media (min-width: 1200px) {
+        a {
+            width: 60px;                /* Iconos más grandes en pantallas muy grandes */
+            height: 60px;
+            img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+}
